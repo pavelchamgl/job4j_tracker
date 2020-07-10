@@ -15,7 +15,7 @@ public class Student {
         petya.music();
         petya.music();
         petya.music();
-        for (int i = 0; i <= 2 ; i++) {
+        for (int i = 0; i <= 2; i++) {
             petya.song();
         }
     }
