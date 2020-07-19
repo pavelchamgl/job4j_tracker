@@ -7,6 +7,10 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
+    public int getSize() {
+        return size;
+    }
+
     public boolean delete(int id) {
         boolean result = false;
         int index = indexOf(id);
@@ -58,7 +62,6 @@ public class Tracker {
             if (items[i].getName().equals(key)) {
                 result[index] = items[i];
                 ++index;
-                break;
             }
         }
         return Arrays.copyOf(result, index);
