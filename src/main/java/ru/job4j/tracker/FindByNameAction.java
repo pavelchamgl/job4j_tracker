@@ -8,7 +8,6 @@ public class FindByNameAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        boolean result = true;
         String name = input.askStr("Enter name: ");
         Item[] items = tracker.findByName(name);
         if (items != null) {
@@ -17,8 +16,7 @@ public class FindByNameAction implements UserAction {
             }
         } else {
             System.out.println("Item with these Name not found.");
-            result = false;
         }
-        return result;
+        return true;
     }
 }

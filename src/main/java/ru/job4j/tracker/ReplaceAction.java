@@ -8,15 +8,13 @@ public class ReplaceAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        boolean result = true;
         String name = input.askStr("Enter Name: ");
         int id = Integer.valueOf(input.askStr("Enter Id: "));
         if (tracker.replace(id, new Item(name))) {
             System.out.println("Replace successful.");
         } else {
             System.out.println("Id not found.");
-            result = false;
         }
-        return result;
+        return true;
     }
 }
