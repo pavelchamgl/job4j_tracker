@@ -16,7 +16,7 @@ public class FindAllAction implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         Item[] items = tracker.findAll();
         for (int index = 0; index < items.length - 1; index++) {
-            System.out.println(index + ". " + items[index].getName());
+            out.println(index + ". " + items[index].getName());
         }
         return true;
     }
