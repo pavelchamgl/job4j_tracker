@@ -7,6 +7,7 @@ public class UserStore {
         for (int index = 0; index < users.length; index++) {
             if (users[index].getUsername().equals(login)) {
                 result = users[index];
+                break;
             }
         }
         if (result == null) {
@@ -16,13 +17,10 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        boolean result = false;
         if (!user.isValid() || user.getUsername().length() < 3) {
             throw new UserInvalidException(" User is not valid.");
-        } else {
-            result = true;
         }
-        return result;
+        return true;
     }
 
     public static void main(String[] args) {
