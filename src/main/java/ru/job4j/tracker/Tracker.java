@@ -35,7 +35,14 @@ public class Tracker {
     }
 
     private int indexOf(String id) {
-        return items.indexOf(Integer.parseInt(id));
+        int rsl = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
     }
 
     public Item add(Item item) {
@@ -59,13 +66,7 @@ public class Tracker {
     }
 
     public Item findById(String id) {
-        Item result = new Item();
-        for (Item item : items) {
-            if (item.getId().equals(id)) {
-                result = item;
-                break;
-            }
-        }
-        return result;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
     }
 }
